@@ -9,6 +9,7 @@
 <html>
 <head>
   <title>Library</title>
+  <link rel="shortcut icon" href="${pageContext.request.contextPath}/images/bookcase_9315.ico">
   <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/CSS/index-style.css">
 </head>
 <body>
