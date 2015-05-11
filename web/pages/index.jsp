@@ -1,3 +1,4 @@
+<%@ page import="test.TestConnection" %>
 <%--
   Created by IntelliJ IDEA.
   User: Nikolay
@@ -24,7 +25,13 @@
 <form name="username" action="pages/main.jsp" method="post">
   <input type="text" name="username" value="" >
   <input type="submit" value="Login">
+
 </form>
+  <%
+    TestConnection tc = new TestConnection();
+    tc.check();
+
+  %>
 </div>
 </body>
 </html>
