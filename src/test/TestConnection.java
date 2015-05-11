@@ -24,12 +24,12 @@ public class TestConnection {
 
             while (rs.next()){
                 System.out.println(rs.getString("name"));
-                System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK");
+
             }
 
 
         } catch (SQLException e) {
-           // e.printStackTrace();
+           e.printStackTrace();
         }
     }
 }

@@ -1,0 +1,72 @@
+.logo-text{
+    text-align: center;
+    height:100px;
+    font-size:40px;
+    padding-top: 40px;
+
+}
+
+.main-div{
+    background:lightblue ;
+
+}
+
+div{
+    border-radius: 10px;
+    background:royalblue;
+    font-family: fantasy,cursive;
+    color:black;
+    margin: 15px;
+    padding-left: 20px;
+
+}
+
+.search-div{
+    height: 35px;
+    padding: 20px;
+}
+
+input[type=text],
+input[type=submit],
+select[name=search_option]
+{
+
+    height: 30px;
+}
+
+input[type=text]{
+
+    width:70%;
+}
+
+input[type=submit],
+select[name=search_option]
+{
+    width : 10%;
+
+
+}
+
+
+
+.author-list{
+
+    width:30%;
+    min-height: 300px;
+    float: left;
+}
+
+.book-list{
+    width: 62%;
+    min-height: 300px;
+    float: right;
+}
+body{
+
+    background:lightblue;
+}
+
+
+
+
+

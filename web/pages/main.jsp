@@ -9,12 +9,80 @@
 <html>
 <head>
     <title></title>
+  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/CSS/main-style.css">
 </head>
 <body>
 <%request.setCharacterEncoding("UTF-8");%>
-<h1>Hello</h1>
-<h1>
-  <%= request.getParameter("username") %>
-</h1>
+
+<div class="main-div">
+  <div>
+    <h1>Hello, <%= request.getParameter("username") %></h1>
+  </div>
+
+  <div class="logo" width="100%" height="50px">
+    <h1 class="logo-text">Welcome to the best online library </h1>
+
+  </div>
+
+  <div class="search-div">
+   <form class="search_bar" name="search_form" method="post">
+     <input type="text" name="search_string" value="">
+     <input type="submit" value="Поиск" name="search_button">
+     <select name="search_option">
+       <option>Название книги</option>
+       <option>Автор</option>
+     </select>
+    </form>
+
+  </div>
+
+  <div class="author-list">
+   <h3>Список авторов</h3>
+    <p>111111111111</p>
+    <p>bbbbbbbbbbbb</p>
+    <p>bbbbbbbbbbbb</p>
+    <p>bbbbbbbbbbbb</p>
+    <p>bbbbbbbbbbbb</p>
+    <p>bbbbbbbbbbbb</p>
+    <p>bbbbbbbbbbbb</p>
+    <p>bbbbbbbbbbbb</p>
+    <p>bbbbbbbbbbbb</p>
+    <p>bbbbbbbbbbbb</p>
+    <p>bbbbbbbbbbbb</p>
+    <p>bbbbbbbbbbbb</p>
+    <p>bbbbbbbbbbbb</p>
+    <p>bbbbbbbbbbbb</p>
+    <p>bbbbbbbbbbbb</p>
+    <p>bbbbbbbbbbbb</p>
+    <p>bbbbbbbbbbbb</p>
+    <p>bbbbbbbbbbbb</p>
+  </div>
+
+  <div class="book-list">
+    <p>book_book_book_book_book_book</p>
+    <p>book_book_book_book_book_book</p>
+    <p>book_book_book_book_book_book</p>
+    <p>book_book_book_book_book_book</p>
+    <p>book_book_book_book_book_book</p>
+    <p>book_book_book_book_book_book</p>
+    <p>book_book_book_book_book_book</p>
+    <p>book_book_book_book_book_book</p>
+    <p>book_book_book_book_book_book</p>
+    <p>book_book_book_book_book_book</p>
+    <p>book_book_book_book_book_book</p>
+    <p>book_book_book_book_book_book</p>
+    <p>book_book_book_book_book_book</p>
+    <p>book_book_book_book_book_book</p>
+    <p>book_book_book_book_book_book</p>
+    <p>book_book_book_book_book_book</p>
+  </div>
+
+
+
+
+</div>//close main container
+
+
+
 </body>
 </html>
