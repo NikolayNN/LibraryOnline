@@ -4,7 +4,6 @@ import test.ConnectionConfiguration;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
@@ -20,40 +19,22 @@ public class AuthorList {
 
             Connection conn = ConnectionConfiguration.getConnection();
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("select * from author");
-            authorList = new ArrayList<Author>();
+            ResultSet rs = stmt.executeQuery("select * from author order by fio");
+            authorList = new ArrayList<>();
             while (rs.next()){
                 Author author =new Author(rs.getString("fio"));
                authorList.add(author);
-
             }
-
-
         }catch (Exception e){
             e.printStackTrace();
         }
-
-
-        return sort(authorList);
-    }
-
-    private ArrayList<Author> sort(ArrayList<Author> list){
-        for(int j=0; j < list.size(); j++ ) {
-            for (int i = 0; i < list.size() - 1; i++) {
-                if (list.get(i).getName().compareTo(list.get(i + 1).getName()) > 0) {
-                    Author a = list.get(i);
-                    list.set(i, list.get(i + 1));
-                    list.set(i + 1, a);
-                }
-            }
-        }
-return list;
+        return authorList;
     }
 
     public ArrayList<Author> getAuthorList(){
         if(authorList!=null) return authorList;
 
-        authorList = new ArrayList<Author>();
+        authorList = new ArrayList<>();
         authorList = writeAuthorList();
 
         return authorList;
