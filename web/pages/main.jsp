@@ -1,3 +1,5 @@
+<%@ page import="objects.AuthorList" %>
+<%@ page import="objects.Author" %>
 <%--
   Created by IntelliJ IDEA.
   User: Nikolay
@@ -37,25 +39,14 @@
   </div>
 
   <div class="author-list">
-   <h3>Список авторов</h3>
-    <p>111111111111</p>
-    <p>bbbbbbbbbbbb</p>
-    <p>bbbbbbbbbbbb</p>
-    <p>bbbbbbbbbbbb</p>
-    <p>bbbbbbbbbbbb</p>
-    <p>bbbbbbbbbbbb</p>
-    <p>bbbbbbbbbbbb</p>
-    <p>bbbbbbbbbbbb</p>
-    <p>bbbbbbbbbbbb</p>
-    <p>bbbbbbbbbbbb</p>
-    <p>bbbbbbbbbbbb</p>
-    <p>bbbbbbbbbbbb</p>
-    <p>bbbbbbbbbbbb</p>
-    <p>bbbbbbbbbbbb</p>
-    <p>bbbbbbbbbbbb</p>
-    <p>bbbbbbbbbbbb</p>
-    <p>bbbbbbbbbbbb</p>
-    <p>bbbbbbbbbbbb</p>
+   <h3>Список авторов: </h3>
+  <%AuthorList authorList = new AuthorList();
+
+    for(Author author:  authorList.getAuthorList()){%>
+     <p> <a href="#"><%=author.getName()%></a></p>
+
+    <%}
+  %>
   </div>
 
   <div class="book-list">
