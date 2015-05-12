@@ -23,7 +23,6 @@
 
   <div class="logo" width="100%" height="50px">
     <h1 class="logo-text">Welcome to the best online library </h1>
-
   </div>
 
   <div class="search-div">
@@ -35,19 +34,17 @@
        <option>Автор</option>
      </select>
     </form>
-
-  </div>
+  </div><%--close search-div--%>
 
   <div class="author-list">
    <h3>Список авторов: </h3>
-  <%AuthorList authorList = new AuthorList();
-
-    for(Author author:  authorList.getAuthorList()){%>
-     <p> <a href="#"><%=author.getName()%></a></p>
-
-    <%}
-  %>
-  </div>
+    <ul>
+      <jsp:useBean id="authorList" class="objects.AuthorList" scope="application"/>
+      <%for(Author author:authorList.getAuthorList()) {%>
+        <li> <a href="#"><%=author.getName()%> </a></li>
+      <%}%>
+    </ul>
+  </div><%--close AuthorList--%>
 
   <div class="book-list">
     <p>book_book_book_book_book_book</p>
@@ -66,12 +63,12 @@
     <p>book_book_book_book_book_book</p>
     <p>book_book_book_book_book_book</p>
     <p>book_book_book_book_book_book</p>
-  </div>
+  </div><%--close bookList--%>
 
 
 
 
-</div>//close main container
+</div><%--close main container--%>
 
 
 

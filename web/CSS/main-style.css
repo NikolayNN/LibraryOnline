@@ -35,7 +35,7 @@ select[name=search_option]
 }
 
 input[type=text]{
-
+    border-radius: 5px;
     width:70%;
 }
 
@@ -50,13 +50,15 @@ select[name=search_option]
 
 
 .author-list{
-
+    font-size: 100%;
     width:30%;
     min-height: 300px;
     float: left;
+
 }
 
 .book-list{
+
     width: 62%;
     min-height: 300px;
     float: right;
