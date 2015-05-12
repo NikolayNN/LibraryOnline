@@ -1,5 +1,6 @@
 <%@ page import="objects.AuthorList" %>
 <%@ page import="objects.Author" %>
+<%@ page import="objects.Genre" %>
 <%--
   Created by IntelliJ IDEA.
   User: Nikolay
@@ -37,11 +38,11 @@
   </div><%--close search-div--%>
 
   <div class="author-list">
-   <h3>Список авторов: </h3>
+   <h3>Список жанров: </h3>
     <ul>
-      <jsp:useBean id="authorList" class="objects.AuthorList" scope="application"/>
-      <%for(Author author:authorList.getAuthorList()) {%>
-        <li> <a href="#"><%=author.getName()%> </a></li>
+      <jsp:useBean id="genreList" class="objects.GenreList" scope="application"/>
+      <%for(Genre genre:genreList.getGenreList()) {%>
+        <li> <a href="#"><%=genre.getName()%> </a></li>
       <%}%>
     </ul>
   </div><%--close AuthorList--%>

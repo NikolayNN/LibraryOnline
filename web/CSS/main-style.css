@@ -50,8 +50,8 @@ select[name=search_option]
 
 
 .author-list{
-    font-size: 100%;
-    width:30%;
+    font-size: 150%;
+    width:20%;
     min-height: 300px;
     float: left;
 
@@ -59,7 +59,7 @@ select[name=search_option]
 
 .book-list{
 
-    width: 62%;
+    width: 72%;
     min-height: 300px;
     float: right;
 }
