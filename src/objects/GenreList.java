@@ -22,6 +22,7 @@ public class GenreList {
             genreList = new ArrayList<>();
             while (rs.next()){
                 Genre genre =new Genre(rs.getString("name"));
+                genre.setId(Integer.parseInt(rs.getString("id")));
                 genreList.add(genre);
             }
         }catch (Exception e){

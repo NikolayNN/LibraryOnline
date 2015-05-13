@@ -5,7 +5,7 @@
     <ul>
         <jsp:useBean id="genreList" class="objects.GenreList" scope="application"/>
         <%for(Genre genre:genreList.getGenreList()) {%>
-        <li> <a href="#"><%=genre.getName()%> </a></li>
+        <li> <a href="books.jsp?genre_id=<%=genre.getId()%>&name=<%=genre.getName()%>"><%=genre.getName()%> </a></li>
         <%}%>
     </ul>
 </div><%--close AuthorList--%>

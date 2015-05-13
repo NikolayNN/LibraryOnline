@@ -57,12 +57,20 @@ select[name=search_option]
 
 }
 
+
+
 .book-list{
 
     width: 72%;
-    min-height: 300px;
+    min-height: 750px;
     float: right;
+    font-family: "arial";
+
 }
+.book-not-found{
+    color:darkred;
+}
+
 body{
 
     background:lightblue;
