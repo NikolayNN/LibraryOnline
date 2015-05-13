@@ -16,7 +16,7 @@ public class Book implements Serializable {
     private String author;
     private Date year;
     private String publisher;
-    private Image image;
+    private byte[] image;
 
 
 
@@ -90,11 +90,11 @@ public class Book implements Serializable {
         this.publisher = publisher;
     }
 
-    public Image getImage() {
+    public byte[] getImage() {
         return image;
     }
 
-    public void setImage(Image image) {
+    public void setImage(byte[] image) {
         this.image = image;
     }
 }

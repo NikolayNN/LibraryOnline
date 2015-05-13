@@ -21,7 +21,6 @@ public class BookList {
         Connection conn = null;
         Statement stmt = null;
         ResultSet rs = null;
-
         try {
             conn = ConnectionConfiguration.getConnection();
             stmt = conn.createStatement();
@@ -36,7 +35,7 @@ public class BookList {
                 book.setGenre(rs.getString("genre"));
                 book.setAuthor(rs.getString("author"));
                 book.setYear(rs.getDate("year"));
-                book.setImage(new ImageIcon(rs.getBytes("image")).getImage());
+                book.setImage(rs.getBytes("image"));
                 bookList.add(book);
             }
         } catch (Exception e) {
@@ -75,12 +74,9 @@ public class BookList {
                 +"inner join author a on a.id=b.author_id "
                 +"where genre_id = "+id
                 +" ORDER BY b.name");
-
     }
 
-
     public ArrayList<Book> getBookList(){
-
         return bookList;
     }
 }

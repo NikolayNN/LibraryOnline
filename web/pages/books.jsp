@@ -19,16 +19,22 @@
 <h1> <%=request.getParameter("name")%>: </h1>
 
 <jsp:useBean id="bookList" class="objects.BookList" scope="page"/>
+
+
   <%bookList.setBookListByGenre(Integer.parseInt(request.getParameter("genre_id")));
-  if (bookList.getBookList().size()==0)%><%{%><br/><h2 class="book-not-found">Книги не найдены.<h2> <%}%>
- <% for(Book book : bookList.getBookList()){%>
-        <%--<%if (book.getName()==null)%><%{%><h2>Книги не найдены.<h2> <%}%>--%>
+    session.setAttribute("currentBookList",bookList.getBookList());
+    if (bookList.getBookList().size()==0)%><%{%><br/><h2 class="book-not-found">Книги не найдены.<h2> <%}%>
+
+    <% for(Book book : bookList.getBookList()){%>
+
         <p><strong>Название книги:</strong> <%=book.getName()%> </p>
-        <p><strong>Автор: </strong> <%=book.getAuthor()%></p>
-        <p><strong>Страниц: </strong> <%=book.getPages()%></p>
+
+  <p><strong>Автор: </strong> <%=book.getAuthor()%></p>
+
+  <p><strong>Страниц: </strong> <%=book.getPages()%></p>
         <p><strong>Дата первой публикации: </strong> <%=book.getYear()%></p>
         <p><strong>isbn: </strong> <%=book.getIsbn()%></p>
-        <p><%=book.getImage()%>
+        <p><img src="<%=request.getContextPath()%>/ShowImageServlet?index=<%=book.getId()%>"></p>
   <br/><hr/><br/>
 
   <%}%>
