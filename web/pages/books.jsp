@@ -20,22 +20,31 @@
 
 <jsp:useBean id="bookList" class="objects.BookList" scope="page"/>
 
+  <%--<%bookList.setBookListByGenre(Integer.parseInt(request.getParameter("genre_id")));--%>
+  <% if (request.getParameter("type_request").equalsIgnoreCase("byGenre")){
+         bookList.setBookListByGenre(Integer.parseInt(request.getParameter("genre_id")));
+            }else if (request.getParameter("type_request").equalsIgnoreCase("allBooks")){
+                bookList.setAllBooks();
+  }
 
-  <%bookList.setBookListByGenre(Integer.parseInt(request.getParameter("genre_id")));
-    session.setAttribute("currentBookList",bookList.getBookList());
+
+    session.setAttribute("currentBookList", bookList.getBookList());
     if (bookList.getBookList().size()==0)%><%{%><br/><h2 class="book-not-found">Книги не найдены.<h2> <%}%>
 
     <% for(Book book : bookList.getBookList()){%>
+        <div class="book">
+       <br/>
+           <div class="book-name"> <h2> <%=book.getName()%>.</h2></div>
+            <div class="book-cover"><img class="img1" src="<%=request.getContextPath()%>/ShowImageServlet?index=<%=book.getId()%>"></div>
 
-        <p><strong>Название книги:</strong> <%=book.getName()%> </p>
-
-  <p><strong>Автор: </strong> <%=book.getAuthor()%></p>
-
-  <p><strong>Страниц: </strong> <%=book.getPages()%></p>
+        <p><strong>Автор: </strong> <%=book.getAuthor()%></p>
+        <p><strong>Страниц: </strong> <%=book.getPages()%></p>
         <p><strong>Дата первой публикации: </strong> <%=book.getYear()%></p>
         <p><strong>isbn: </strong> <%=book.getIsbn()%></p>
-        <p><img src="<%=request.getContextPath()%>/ShowImageServlet?index=<%=book.getId()%>"></p>
-  <br/><hr/><br/>
+
+            <p><a class="link-read" href="#"> Читать </a></p>
+
+  <br/></div>
 
   <%}%>
 

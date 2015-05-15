@@ -76,6 +76,42 @@ public class BookList {
                 +" ORDER BY b.name");
     }
 
+    public ArrayList<Book> setAllBooks(){
+        return writeBookList(
+                "SELECT b.id, "
+                        +"b.name as name, "
+                        +"b.page_count as pages, "
+                        +"b.isbn as isbn, "
+                        +"g.name as genre, "
+                        +"a.fio as author, "
+                        +"b.publish_year as year, "
+                        +"b.image as image "
+                        +"from book b "
+                        +"inner join  genre g on g.id = b.genre_id "
+                        +"inner join author a on a.id=b.author_id "
+                        +" ORDER BY b.name");
+    }
+
+    public ArrayList<Book> setBooksByFirstLetter(String s){
+        return writeBookList(
+                "SELECT b.id, "
+                        +"b.name as name, "
+                        +"b.page_count as pages, "
+                        +"b.isbn as isbn, "
+                        +"g.name as genre, "
+                        +"a.fio as author, "
+                        +"b.publish_year as year, "
+                        +"b.image as image "
+                        +"from book b "
+                        +"inner join  genre g on g.id = b.genre_id "
+                        +"inner join author a on a.id=b.author_id "
+                        +"where b.name like '"+s+"%'"
+                        +" ORDER BY b.name");
+    }
+
+
+
+
     public ArrayList<Book> getBookList(){
         return bookList;
     }

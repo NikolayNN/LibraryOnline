@@ -17,7 +17,7 @@ div{
     font-family: fantasy,cursive;
     color:black;
     margin: 1%;
-    padding-left: 20px;
+    padding-left: 1%;
 
 }
 
@@ -50,9 +50,9 @@ select[name=search_option]
 
 
 .author-list{
+
     font-size: 150%;
     width:20%;
-    min-height: 300px;
     float: left;
 
 }
@@ -61,12 +61,49 @@ select[name=search_option]
 
 .book-list{
 
-    width: 72%;
+    width: 73%;
     min-height: 750px;
-    float: right;
+    float: left;
     font-family: "arial";
 
 }
+
+.book{
+    font-family: "arial";
+    width: 45%;
+    background: grey;
+    float:left;
+}
+.book-name{
+    height: 10%;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 90%;
+    font-family: arial;
+    font-weight: bold;
+    background: inherit;
+
+
+}
+
+.book-cover{
+    height: 50%;
+    text-align: center;
+    background: inherit;
+}
+.img1{
+    height: 100%;
+}
+
+.link-read{
+    text-decoration: none;
+    color: blue;
+    border-bottom: 1px dashed blue;
+}
+.link-read:hover{
+    border-bottom:none ;
+}
+
 .book-not-found{
     color:darkred;
 }

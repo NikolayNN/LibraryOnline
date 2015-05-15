@@ -3,9 +3,10 @@
 <div class="author-list">
     <h3>Список жанров: </h3>
     <ul>
+        <li><a href="books.jsp?type_request=allBooks">Все книги</a></li>
         <jsp:useBean id="genreList" class="objects.GenreList" scope="application"/>
         <%for(Genre genre:genreList.getGenreList()) {%>
-        <li> <a href="books.jsp?genre_id=<%=genre.getId()%>&name=<%=genre.getName()%>"><%=genre.getName()%> </a></li>
+        <li> <a href="books.jsp?genre_id=<%=genre.getId()%>&name=<%=genre.getName()%>&id=<%=genre.getId()%>&type_request=byGenre"><%=genre.getName()%> </a></li>
         <%}%>
     </ul>
 </div><%--close AuthorList--%>
