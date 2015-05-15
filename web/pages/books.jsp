@@ -21,7 +21,7 @@
 
 <jsp:useBean id="bookList" class="objects.BookList" scope="page"/>
 
-  <%--<%bookList.setBookListByGenre(Integer.parseInt(request.getParameter("genre_id")));--%>
+
   <% if (request.getParameter("type_request").equalsIgnoreCase("byGenre")){
          bookList.setBookList(Integer.parseInt(request.getParameter("genre_id")));
             }else if (request.getParameter("type_request").equalsIgnoreCase("allBooks")){
@@ -29,13 +29,14 @@
                 }else if(request.getParameter("type_request").equalsIgnoreCase("byLetter")){
                     bookList.setBookList(request.getParameter("id"));
                     }else if(request.getParameter("type_request").equalsIgnoreCase("search")){
-
                         bookList.setBookList(request.getParameter("search_string"),request.getParameter("selector"));
   }
 
 
     session.setAttribute("currentBookList", bookList.getBookList());
         if (bookList.getBookList().size()==0)%><%{%><br/><h2 class="book-not-found">Книги не найдены.<h2> <%}%>
+        <%if (bookList.getBookList().size()!=0)%><%{%><br/><h2 class="book-not-found">Найдено книг: <%= bookList.getBookList().size()%> <h2> <%}%>
+
 
     <% for(Book book : bookList.getBookList()){%>
         <div class="book">
@@ -47,8 +48,7 @@
         <p><strong>Страниц: </strong> <%=book.getPages()%></p>
         <p><strong>Дата первой публикации: </strong> <%=book.getYear()%></p>
         <p><strong>isbn: </strong> <%=book.getIsbn()%></p>
-
-            <p><a class="link-read" href="#"> Читать </a></p>
+        <p><a class="link-read" href="#"> Читать </a></p>
 
   <br/></div>
 

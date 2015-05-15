@@ -22,11 +22,14 @@
 <p>Here you can find many intresting books.</p>
 <p>First time, you must enter your name in the form and press button "Login". </p>
 <p>Enjoy!</p>
+  <%if (request.getParameter("exit").equalsIgnoreCase("true")) session.invalidate();%>
+
 <form name="username" action="pages/main.jsp" method="post">
-  <input type="text" name="username" value="" >
+  <input type="text" name="login" value="" >
   <input type="submit" value="Login">
 
 </form>
+
   <%
     TestConnection tc = new TestConnection();
     tc.check();
