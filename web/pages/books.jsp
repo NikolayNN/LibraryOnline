@@ -15,8 +15,9 @@
 <body>
 <%@include file="../jspf/left-menu.jspf"%>
 <div class="book-list">
-
+<%if(request.getParameter("name")!=null){%>
 <h1> <%=request.getParameter("name")%>: </h1>
+<%}%>
 
 <jsp:useBean id="bookList" class="objects.BookList" scope="page"/>
 
@@ -25,11 +26,13 @@
          bookList.setBookListByGenre(Integer.parseInt(request.getParameter("genre_id")));
             }else if (request.getParameter("type_request").equalsIgnoreCase("allBooks")){
                 bookList.setAllBooks();
+                }else if(request.getParameter("type_request").equalsIgnoreCase("byLetter")){
+                    bookList.setBooksByFirstLetter(request.getParameter("id"));
   }
 
 
     session.setAttribute("currentBookList", bookList.getBookList());
-    if (bookList.getBookList().size()==0)%><%{%><br/><h2 class="book-not-found">Книги не найдены.<h2> <%}%>
+        if (bookList.getBookList().size()==0)%><%{%><br/><h2 class="book-not-found">Книги не найдены.<h2> <%}%>
 
     <% for(Book book : bookList.getBookList()){%>
         <div class="book">

@@ -34,3 +34,10 @@
             </select>
         </form>
     </div><%--close search-div--%>
+
+    <div class="alphabet">
+            <%for (char ch= 'а'; ch<='я'; ch++){%>
+               <a class="alphabet-link" href="../pages/books.jsp?type_request=byLetter&id=<%=ch%>"> <%=ch%></a>
+            <%}%>
+    </div>
+

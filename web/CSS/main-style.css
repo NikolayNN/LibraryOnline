@@ -113,6 +113,18 @@ body{
     background:lightblue;
 }
 
+.alphabet{
+    height: 8%;
+    text-transform: uppercase;
+    font-size: 2.2em;
+    text-align: center;
+
+    }
+.alphabet-link{
+    font-family: arial;
+    margin: 0.3%;
+}
+
 
 
 
