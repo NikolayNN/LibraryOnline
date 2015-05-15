@@ -23,11 +23,14 @@
 
   <%--<%bookList.setBookListByGenre(Integer.parseInt(request.getParameter("genre_id")));--%>
   <% if (request.getParameter("type_request").equalsIgnoreCase("byGenre")){
-         bookList.setBookListByGenre(Integer.parseInt(request.getParameter("genre_id")));
+         bookList.setBookList(Integer.parseInt(request.getParameter("genre_id")));
             }else if (request.getParameter("type_request").equalsIgnoreCase("allBooks")){
-                bookList.setAllBooks();
+                bookList.setBookList();
                 }else if(request.getParameter("type_request").equalsIgnoreCase("byLetter")){
-                    bookList.setBooksByFirstLetter(request.getParameter("id"));
+                    bookList.setBookList(request.getParameter("id"));
+                    }else if(request.getParameter("type_request").equalsIgnoreCase("search")){
+
+                        bookList.setBookList(request.getParameter("search_string"),request.getParameter("selector"));
   }
 
 

@@ -25,12 +25,13 @@
     </div>
 
     <div class="search-div">
-        <form class="search_bar" name="search_form" method="post">
+        <form class="search_bar" name="search_form" method="get" action="${pageContext.request.contextPath}/pages/books.jsp">
+            <input type="hidden" name="type_request" value="search">
             <input type="text" name="search_string" value="">
             <input type="submit" value="Поиск" name="search_button">
-            <select name="search_option">
-                <option>Название книги</option>
-                <option>Автор</option>
+            <select name="selector">
+                <option  value="book">Название книги</option>
+                <option  value="author" >Автор книги</option>
             </select>
         </form>
     </div><%--close search-div--%>
